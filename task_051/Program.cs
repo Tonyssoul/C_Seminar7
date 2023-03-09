@@ -22,7 +22,7 @@ int[,] GenerateMatrix(int rows, int cols)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i,j]= rand.Next(0,11);
+            matrix[i, j] = rand.Next(0, 11);
         }
     }
     return matrix;
@@ -34,25 +34,20 @@ void PrintMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            System.Console.Write(matrix[i,j]+"\t");
+            System.Console.Write(matrix[i, j] + "\t");
         }
         System.Console.WriteLine();
     }
-    
+
 }
 
 int SummElements(int[,] matrix)
 {
     int Summ = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int length = (matrix.GetLength(0) > matrix.GetLength(1)) ? matrix.GetLength(1) : matrix.GetLength(0);
+    for (int i = 0; i < length; i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if(i==j)
-            {
-                Summ += matrix[i,j];
-            }
-        }
+        Summ += matrix[i, i];
     }
     return Summ;
 }
