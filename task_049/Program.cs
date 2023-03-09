@@ -42,14 +42,11 @@ void PrintMatrix(int[,] matrix)
 
 void ZamenaNechet(int[,] matrix)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 1; i < matrix.GetLength(0); i+=2)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 1; j < matrix.GetLength(1); j+=2)
         {
-            if (i % 2 == 1 && j % 2 == 1)
-            {
-                matrix[i, j] = matrix[i, j] * matrix[i, j];
-            }
+            matrix[i, j] = matrix[i, j] * matrix[i, j];
         }
     }
 }
